@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
 const bukiset = require('./buki.json');
+require('dotenv').config();
+
 const client = new Discord.Client();
-const token = '';
+const token = process.env.TOKEN;
 
 client.on('message', message => {
   if (message.author.bot) return;
