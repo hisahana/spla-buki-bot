@@ -13,7 +13,7 @@ client.on('message', message => {
   switch (content) {
     case 'buki':
       const channel = getConnectingChannel(message.guild.channels, message.author.id);
-      if (channel !== void 0) {
+      if (channel) {
         let text = '';
         channel.members.forEach(member => {
           text+= getMemberName(member) + ': ' + getBuki().name + '\n';
