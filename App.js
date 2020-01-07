@@ -10,6 +10,7 @@ client.on('message', message => {
   if (!message.isMentioned) return;
   if (!message.mentions.users.has(client.user.id)) return;
   const content = getRealContent(message.content);
+  if (!content) message.channel.send('なんやねん');
   switch (content) {
     case 'buki':
       const channel = getConnectingChannel(message.guild.channels, message.author.id);
@@ -42,6 +43,9 @@ getMemberName = member => {
   return member.nickname ? member.nickname : member.user.username;
 }
 
-getRealContent = content => content.match(/(?<=<*> )(.*)/g)[0];
+getRealContent = content => { 
+  const result = content.match(/(?<=<*> )(.*)/g);
+  return result ? result[0] : '';
+}
 
 client.login(token);
