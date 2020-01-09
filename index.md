@@ -46,4 +46,4 @@ node App.js
 
 ### その他
 
-質問があれば[https://twitter.com/ykm1ya](@ykm1ya)までご連絡ください。
+質問があれば[@ykm1ya](https://twitter.com/ykm1ya)までご連絡ください。
