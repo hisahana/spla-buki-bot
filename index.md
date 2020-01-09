@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+## これはなに？
 
-You can use the [editor on GitHub](https://github.com/hisahana/spla-buki-bot/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Splatoon2のブキを接続しているボイスチャンネルのメンバーにランダムにばらまくDiscord botです。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### botをサーバーに追加する
 
-### Markdown
+以下のURLにアクセスし、Botをサーバーに追加してください。  
+[https://discordapp.com/api/oauth2/authorize?client_id=661600689495212083&permissions=0&scope=bot](https://discordapp.com/api/oauth2/authorize?client_id=661600689495212083&permissions=0&scope=bot)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### コマンド
 
-```markdown
-Syntax highlighted code block
+botアカウントに対して`buki`とメンションを送ってください。
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+@ブキミ buki
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### ローカルで動かす場合
 
-### Jekyll Themes
+- node v12.1.0
+- yarn 1.15.2
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hisahana/spla-buki-bot/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+ダウンロード＆インストール
 
-### Support or Contact
+```sh
+git clone https://github.com/hisahana/spla-buki-bot.git
+cd spla-buki-bot
+yarn install
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Discord botアカウントを用意し、Tokenを設定
+
+```sh
+cp .env.example .env
+vi .env
+
+# Discord botで発行したTokenを設定
+TOKEN=YOUR-DISCORD-BOT-TOKEN
+```
+
+起動
+
+```sh
+node App.js
+```
+
+### その他
+
+質問があれば[https://twitter.com/ykm1ya](@ykm1ya)までご連絡ください。
